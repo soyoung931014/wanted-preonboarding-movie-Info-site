@@ -70,11 +70,23 @@ const PostListContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  padding-left: 5.6vw;
 `;
 
 const Grid = styled.ul`
   @media ${({ theme }) => theme.deviceSize.max.mobile} {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px 60px;
+  }
+  @media (max-width: 700px) {
+    gap: 20px 50px;
+  }
+  @media (max-width: 650px) {
+    gap: 20px 30px;
+  }
+  @media (max-width: 500px) {
+    position: relative;
+    left: -5px;
   }
   width: 100%;
   display: grid;

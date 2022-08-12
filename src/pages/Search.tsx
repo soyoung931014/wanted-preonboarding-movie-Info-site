@@ -58,7 +58,9 @@ const Search = () => {
       <SearchContainer>
         <SearchInput handleSearchMovie={handleSearchMovie} />
         <ButtonContainer>
-          <Button onClick={goToAccuracy}>정확도순</Button>
+          <Button First onClick={goToAccuracy}>
+            정확도순
+          </Button>
           <Button onClick={goToRatingTab}>평점순</Button>
           <Button onClick={goToLatestTab}>최신순</Button>
         </ButtonContainer>
@@ -88,10 +90,10 @@ const SearchContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Button = styled.button`
+const Button = styled.button<{ First?: any }>`
   width: 4.5rem;
   height: 2.5rem;
-  margin-left: 10px;
+  margin-left: ${(props) => (props.First ? '2px' : '10px')};
   border-radius: 8%;
   border: solid 1px;
   color: white;
@@ -101,7 +103,7 @@ const Button = styled.button`
   }
 `;
 const ButtonContainer = styled.div`
-  margin-top: 1rem;
-  position: relative;
-  left: -35%;
+  margin-top: 1.5rem;
+  display: flex;
+  width: 80vw;
 `;
